@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+}
+h1{
+    color: lightgrey;
+}
+.czerwony{
+
+        height: 200px;
+        width: 200px;
+        background-color: red;
+}
+.niebieski{
+
+    height: 200px;
+    width: 200px;
+    background-color: darkblue;
+}

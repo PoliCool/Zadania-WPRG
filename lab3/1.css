@@ -1,0 +1,15 @@
+.naglowek{
+    background-color: blue;
+}
+p{
+    color: red;
+}
+span{
+    color: green;
+}
+.title > li{
+    background-color:yellow ;
+}
+.conteiner + h2{
+    font-style:italic;
+}
