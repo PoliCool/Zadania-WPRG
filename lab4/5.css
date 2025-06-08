@@ -1,0 +1,20 @@
+.wrapper{
+    text-align: center;
+}
+.img{
+    float: left;
+    margin-right: 10px;
+    height: 50px;
+    width: 10%;
+}
+li{
+    display: inline;
+    margin: 10px;
+}
+text{
+    overflow: hidden;
+}
+.el{
+    float: left;
+    margin: 0;
+}
