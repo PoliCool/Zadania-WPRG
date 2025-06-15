@@ -1,0 +1,180 @@
+header{
+    background-color: lightblue;
+    height: 100px;
+    display: flex;
+    align-items: center; /* Wyśrodkowanie w pionie */
+    justify-content: space-between; /* Logo po lewej, menu po prawej */
+    padding: 0 20px;
+}
+body{
+    margin: 0px;
+    background-color: lightgray;
+}
+/*Ustawienia logo*/
+.logo {
+    float: left;
+    height: 100px;
+    margin-left: 2px;
+}
+.logo_name{
+    margin: 10px;
+}
+.part1{
+    color:darkblue;
+    font-size: 40px;
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+    font-style: normal;
+}
+.part2{
+    font-size: 25px;
+    font-family: Cambria;
+}
+/*Ustawienia nawigacji*/
+.nav{
+    display: flex;
+    align-items: center;
+    font-size: 27px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/*kafelki*/
+header ul li a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+
+}
+/*lista dropdown*/
+/*parent*/
+header ul li{
+    float: left;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+}
+/*child*/
+header ul li ul{
+    position: absolute;
+    list-style: none;
+    top: 100%;
+    right:0px;
+    width: 180px;
+    padiing: 0px;
+    margin: 0px;
+    background-color: lightblue;
+    display:none;
+    z-index: 1;
+}
+header ul li:hover >ul{
+    display: block;
+}
+header ul li ul li{
+    width: 100%;
+    margin: 0;
+}
+header ul li ul li a{
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: lightblue;
+    color: black;
+    text-decoration: none;
+}
+
+
+header ul li ul li a:hover{
+   background: aliceblue;
+}
+
+header ul li a:hover{
+    background-color: darkcyan;
+}
+
+
+.material-symbols-outlined{
+    float: right;
+    display: none;
+}
+.menu-item > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkcyan;
+    height: 100px;
+    width: 60px;
+    text-decoration: none;
+}
+
+.menu-item > a:hover {
+    background-color: #008b8b;
+}
+
+.material-symbols-outlined {
+    font-size: 30px;
+    color: white;
+}
+/*MAIN*/
+.button{
+    padding: 10px;
+    background: red;
+    color: black;
+
+    border-radius: 5px;
+    text-decoration: none;
+}
+button:hover{
+    color: blue;
+    background: black;
+}
+.read_more{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid lightblue;
+    background: transparent;
+}
+.read_more:hover{
+    color: black;
+    background: lightblue;
+}
+.main_content{
+    width: 70%;
+    float:left;
+
+}
+.content{
+    width: 90%;
+    margin: 30px auto 30px;
+
+}
+.new_posts{
+    margin: 50px
+}
+.post{
+    width: 95%;
+    height: 270px;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: white;
+    position: relative;
+}
+.post a{
+    text-decoration: none;
+    color: dodgerblue;
+}
+.post_image{
+    width:40%;
+    height: 100%;
+    float: left;
+}
+.post_preview{
+    padding: 10px;
+    float: right;
+    width: 55%;
+}
+.post_preview h2{
+    margin: 0;
+}
+
