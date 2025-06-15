@@ -1,36 +1,61 @@
-header{
+/*klasyczek*/
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 90%;
+    margin: 30px auto;
+    flex: 1; /* To pozwala stopce być zawsze na dole */
+}
+
+/* Header */
+header {
     background-color: lightblue;
     height: 100px;
     display: flex;
-    align-items: center; /* Wyśrodkowanie w pionie */
-    justify-content: space-between; /* Logo po lewej, menu po prawej */
-    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
-body{
-    margin: 0px;
-    background-color: lightgray;
+.nav_wrapper {
+    margin-left: auto; /* to spycha go maksymalnie na prawo */
 }
-/*Ustawienia logo*/
+
 .logo {
-    float: left;
     height: 100px;
-    margin-left: 2px;
 }
-.logo_name{
+
+.logo_name {
     margin: 10px;
 }
-.part1{
-    color:darkblue;
+
+.part1 {
+    color: darkblue;
     font-size: 40px;
     font-family: "Edu NSW ACT Hand Pre", cursive;
-    font-style: normal;
 }
-.part2{
+
+.part2 {
     font-size: 25px;
     font-family: Cambria;
 }
-/*Ustawienia nawigacji*/
-.nav{
+
+/* Nawigacja */
+.nav {
     display: flex;
     align-items: center;
     font-size: 27px;
@@ -38,143 +63,294 @@ body{
     padding: 0;
     list-style: none;
 }
-/*kafelki*/
-header ul li a{
+
+header ul li {
+    border: 1px solid red;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+}
+/*Elementy panelu nawigacyjnego*/
+header ul li a {
     display: block;
     padding: 20px;
     text-decoration: none;
     color: black;
+}
+/*Hover panelu nawigacyjnego*/
+header ul li a:hover {
+    background-color: #5b5a59;
+    transition: color 0.5s;
+    color: white;
+}
 
-}
-/*lista dropdown*/
-/*parent*/
-header ul li{
-    float: left;
-    position: relative;
-    padding: 0px;
-    margin: 0px;
-}
-/*child*/
-header ul li ul{
+header ul li ul {
     position: absolute;
-    list-style: none;
     top: 100%;
-    right:0px;
+    right: 0;
     width: 180px;
-    padiing: 0px;
-    margin: 0px;
     background-color: lightblue;
-    display:none;
+    list-style: none;
+    display: none;
+    margin: 0;
+    padding: 0;
     z-index: 1;
 }
-header ul li:hover >ul{
+
+header ul li:hover > ul {
     display: block;
 }
-header ul li ul li{
-    width: 100%;
-    margin: 0;
-}
-header ul li ul li a{
+
+header ul li ul li a {
     display: block;
-    width: 100%;
     padding: 15px 20px;
     background-color: lightblue;
-    color: black;
     text-decoration: none;
+    color: black;
 }
 
-
-header ul li ul li a:hover{
-   background: aliceblue;
+header ul li ul li a:hover {
+    background: aliceblue;
 }
 
-header ul li a:hover{
-    background-color: darkcyan;
+/* Ikonka menu */
+.material-symbols-outlined {
+    font-size: 30px;
+    color: white;
 }
 
-
-.material-symbols-outlined{
-    float: right;
-    display: none;
-}
-.menu-item > a {
+.menu_item > a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: darkcyan;
+    background-color: #222;
     height: 100px;
     width: 60px;
     text-decoration: none;
 }
 
-.menu-item > a:hover {
+.menu_item > a:hover {
     background-color: #008b8b;
 }
 
-.material-symbols-outlined {
-    font-size: 30px;
-    color: white;
+/* Sekcja postów */
+.new_posts {
+    margin: 50px 0 20px 0;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
 }
-/*MAIN*/
-.button{
-    padding: 10px;
-    background: red;
-    color: black;
 
-    border-radius: 5px;
-    text-decoration: none;
+.main_content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-button:hover{
-    color: blue;
-    background: black;
-}
-.read_more{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    border: 1px solid lightblue;
-    background: transparent;
-}
-.read_more:hover{
-    color: black;
-    background: lightblue;
-}
-.main_content{
-    width: 70%;
-    float:left;
 
-}
-.content{
-    width: 90%;
-    margin: 30px auto 30px;
 
-}
-.new_posts{
-    margin: 50px
-}
-.post{
-    width: 95%;
+.post {
+    flex: 1 1 48%;
     height: 270px;
-    margin: 10px auto;
     border-radius: 5px;
     background-color: white;
     position: relative;
+    display: flex;
+    overflow: hidden;
+    min-width: 300px;
 }
-.post a{
-    text-decoration: none;
-    color: dodgerblue;
-}
-.post_image{
-    width:40%;
+
+.post_image {
+    width: 40%;
     height: 100%;
-    float: left;
+    object-fit: cover;
 }
-.post_preview{
-    padding: 10px;
-    float: right;
-    width: 55%;
+
+.post_preview {
+    width: 60%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.post_preview h2{
+
+.post_preview h2 {
     margin: 0;
 }
 
+.post a {
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+/* Przycisk */
+.button {
+    padding: 10px;
+    background: red;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button:hover {
+    color: blue;
+    background: black;
+}
+
+.read_more {
+    align-self: flex-end;
+    border: 1px solid lightblue;
+    background: transparent;
+}
+
+.read_more:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Stopka */
+.footer {
+    background-color: #5b5a59;
+    color: white;
+    text-align: center;
+    min-height: 300px;
+    padding: 30px 0;
+}
+.footer_content{
+    display: flex;
+    height: 100%;
+}
+.footer_section{
+    flex: 1;
+
+}
+.contact_form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact_input{
+    font-size: 20px;
+    text-align: center;
+    height: 100px;
+    width: 300px;
+    border-radius: 5px;
+}
+.social_icon .material-symbols-outlined {
+    font-size: 32px;
+    color: white;
+    margin-left: 10px;
+    vertical-align: middle;
+    transition: color 0.5s;
+}
+.social_icon:hover .material-symbols-outlined {
+    color: lightblue;
+}
+
+
+
+/*Formularz kontaktowy*/
+.contact_form {
+
+    padding: 20px;
+    border-radius: 5px;
+}
+.contact_form_inner {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /*Odległość między elementami*/
+    gap: 15px;
+}
+
+/*Label "Odezwij sie" */
+.contact_form_inner label {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    font-family: "Edu NSW ACT Hand Pre", cursive;
+}
+
+/*Środek formularzy*/
+.contact_input {
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    resize: vertical;
+    /*sigma dziedziczenie*/
+    height: 100%;
+}
+
+/*Przycisk stopka*/
+.button_big {
+    color: white;
+    background-color: lightblue;
+    padding: 10px 20px;
+}
+.button_big:hover {
+    color: #605d5c;
+    background-color: lightgrey;
+    transition: color 0.5s;
+}
+
+
+/*SINGLE*/
+
+.main_content.single {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px 50px;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 1px solid red;
+}
+.post_title{
+    text-align: center;
+    font-size: 30px;
+}
+.post_content{
+    color: #5b5a59;
+    font-size: 20px;
+}
+
+
+/*REGISTER*/
+.auth_content a{
+    text-decoration: none;
+    color: black;
+}
+.auth_content a:hover{
+    color: #5b5a59;
+}
+.auth_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+.auth_form{
+    padding: 80px;
+    background: white;
+    border: 1px solid red;
+    border-radius: 5px;
+
+}
+.form_title{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+
+    padding: 20px;
+}
+.auth_content form p{
+    text-align: center;
+}
+
+/*KOMUNIKATY*/
