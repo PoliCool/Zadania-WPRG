@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Main</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Ikonka dropdown -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+    <!-- Ikonki -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
     <!--Czcionka-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,27 +15,31 @@
 <body>
 <header>
     <div class="logo">
-        <h1 class="logo_name"><span class="part1">Rutkowski</span><span class="part2">Blog</span></h1>
+        <h1 class="logo_name">
+            <span class="part1">Rutkowski</span><span class="part2">Blog</span>
+        </h1>
     </div>
 
-</span>
-    <ul class="nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Kontakt</a></li>
-    <li class="menu_item">
-        <a> <span class="material-symbols-outlined">menu</span></a>
-    <ul class="dropdown">
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Logout</a></li>
-    </ul>
-    </li>
-    </ul>
+    <div class="nav_wrapper">
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li class="menu_item">
+                <a><span class="material-symbols-outlined">menu</span></a>
+                <ul class="dropdown">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </header>
 
 <div class="content">
-    <div class="main_content">
     <h1 class="new_posts">Najnowsze Posty</h1>
+    <div class="main_content">
+
         <div class="post">
             <img src="https://picsum.photos/200/300" alt="" class="post_image">
             <div class="post_preview">
@@ -70,6 +75,32 @@
                 </p>
                 <a href="single.html" class="button read_more">Read More</a>
             </div>
+        </div>
+    </div>
+</div>
+<!-- STOPKA -->
+<div class="footer">
+
+    <div class="footer_content">
+        <div class="footer_section about">
+            <h1 class="logo_name"><span class="part1">Rutkowski</span><span class="part2">Blog</span></h1>
+            <br>
+            Telefon: 696-696-696
+            <br>
+            Sociale:
+            <a href="https://linkedin.com" target="_blank" class="social_icon">
+                <span class="material-symbols-outlined">link</span>
+            </a>
+        </div>
+        <div class="footer_section contact_form">
+            <form action="index.html" method="post" class="contact_form_inner">
+                <label for="email">Odezwij się!</label>
+                <input type="email" name="email" id="email" class="text_input contact_input" placeholder="Email">
+
+                <textarea name="message" class="text_input contact_input" placeholder="Twoja wiadomość"></textarea>
+
+                <button type="submit" class="button button_big">Wyślij</button>
+            </form>
         </div>
     </div>
 
