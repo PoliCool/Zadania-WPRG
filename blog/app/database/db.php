@@ -96,7 +96,7 @@ function update($table,$id,$data){
         }
         $i++;
     }
-    $sql=$sql." WHERE id = id=?";
+    $sql = $sql." WHERE id = ?";
     $data['id'] = $id;
     $stmt=executeQuery($sql,$data);
     return $stmt->affected_rows;

@@ -1,5 +1,5 @@
-
 <?php include("../../path.php") ?>
+<?php include(ROOT_PATH . '/app/controllers/posts.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,8 +36,8 @@
                     <label>Title</label>
                     <input type="text" name="title" value="<?php echo $title ?>" class="text_input title_input">
                     <label>Text</label>
-                    <input type="text" name="body" class="text_input title_input">
-                    <button type="submit" name="create_button" class="button button_big">Uptade post</button>
+                    <input type="text" name="body" value="<?php echo $body ?>" class="text_input title_input">
+                    <button type="submit" name="update_post" class="button button_big">Uptade post</button>
                 </div>
             </form>
         </div>
