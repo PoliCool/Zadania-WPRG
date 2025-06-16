@@ -1,4 +1,5 @@
 <?php include("../../path.php") ?>
+<?php include(ROOT_PATH . '/app/controllers/users.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,24 +32,18 @@
             <table>
                 <th>ID</th>
                 <th>Username</th>
-                <th>Role</th>
+                <th>Email</th>
                 <th colspan="2">Action</th>
                 <tbody>
+                <?php foreach ($admin_users as $key => $user): ?>
                 <tr>
-                    <td>1</td>
-                    <td>Policool</td>
-                    <td>User</td>
-                    <td><a href="#" class="edit">edit</a></td>
-                    <td><a href="#" class="delete">delete</a></td>
-
+                    <td><?php echo $key+1;?></td>
+                    <td><?php echo $user['username'];?></td>
+                    <td><?php echo $user['email'];?></td>
+                    <td><a href="edit.php?id=<?php echo $user['id'];?>]" class="edit">edit</a></td>
+                    <td><a href="index.php?delete_id=<?php echo $user['id'];?>" class="delete">delete</a></td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Bloqver</td>
-                    <td>Admin</td>
-                    <td><a href="#" class="edit">edit</a></td>
-                    <td><a href="#" class="delete">delete</a></td>
-                </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

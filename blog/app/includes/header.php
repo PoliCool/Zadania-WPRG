@@ -10,8 +10,7 @@
     <div class="nav_wrapper">
         <ul class="nav">
             <li><a href="<?php echo BASE_URL . '/index.php' ?>">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Kontakt</a></li>
+
 
             <?php if (isset($_SESSION['user_id'])): ?>
             <li>

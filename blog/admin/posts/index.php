@@ -49,9 +49,9 @@
                         <td><a href="edit.php?delete_id=<?php echo $post['id'];?>" class="delete">delete</a></td>
                         <td>
                             <?php if ($post['published']): ?>
-                                <a href="#" class="unpublish">unpublish</a>
+                                <a href="edit.php?publish=0&p_id=<?php echo $post['id']?>" class="unpublish">unpublish</a>
                             <?php else: ?>
-                                <a href="#" class="publish">publish</a>
+                                <a href="index.php?publish=1&p_id=<?php echo $post['id']?>" class="publish">publish</a>
                             <?php endif; ?>
                         </td>
                     </tr>

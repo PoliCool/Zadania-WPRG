@@ -30,6 +30,16 @@ if(isset($_GET['delete_id'])){
     header('Location:' . BASE_URL . '/admin/posts/index.php');
 }
 
+/*publikowanie*/
+if(isset($_GET['publish'])&& isset($_GET['p_id'])){
+    $published=$_GET['publish'];
+    $p_id=$_GET['p_id'];
+    $cout =update($table,$p_id,['published'=>$published]);
+    $_SESSION['message'] = 'Post published state changed';
+    $_SESSION['type'] = 'success';
+    header('Location:' . BASE_URL . '/admin/posts/index.php');
+}
+
 
 /*dodanie*/
 if(isset($_POST['add_post'])){
@@ -54,7 +64,7 @@ if(isset($_POST['add_post'])){
 
     if(count($errors)==0) {
         unset($_POST['add_post']);
-        $_POST['user_id'] = 1;
+        $_POST['user_id'] = $_SESSION['user_id'];
         $_POST['published'] = isset($_POST['published']) ? 1 : 0;
 
         $post_id = create($table, $_POST);
@@ -88,7 +98,7 @@ if(isset($_POST['update_post'])){
     if(count($errors)==0) {
         $id=$_POST['id'];
         unset($_POST['update_post'],$_POST['id']);
-        $_POST['user_id'] = 1;
+        $_POST['user_id'] = $_SESSION['user_id'];
         $_POST['published'] = isset($_POST['published']) ? 1 : 0;
         $_POST['body'] = htmlentities($_POST['body']);
 

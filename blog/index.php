@@ -1,6 +1,8 @@
 <?php include('path.php');
 include(ROOT_PATH . 'app/database/db.php');
 
+$posts=selectAll('posts',['published'=>1]);
+
 ?>
 
 <!DOCTYPE html>
@@ -38,31 +40,6 @@ include(ROOT_PATH . 'app/database/db.php');
                 <a href="single.html" class="button read_more">Read More</a>
             </div>
         </div>
-        <div class="post">
-            <img src="https://picsum.photos/200/300" alt="" class="post_image">
-            <div class="post_preview">
-                <h2 ><a href="single.html" class="Title">LOLOLOl sadkaosjdw dwolo</a></h2>
-                <span>Adam Rutkowski</span>
-                <span>15/06/2025</span>
-                <p class="preview_text">
-                    skibid sigma elo sigjidsa
-                </p>
-                <a href="single.html" class="button read_more">Read More</a>
-            </div>
-        </div>
-        <div class="post">
-            <img src="https://picsum.photos/200/300" alt="" class="post_image">
-            <div class="post_preview">
-                <h2><a href="single.html">LOLOLOl sadkaosjdw dwolo</a></h2>
-                <span>Adam Rutkowski</span>
-                <span>15/06/2025</span>
-                <p class="preview_text">
-                    skibid sigma elo sigjidsa
-                </p>
-                <a href="single.html" class="button read_more">Read More</a>
-            </div>
-        </div>
-    </div>
 </div>
 <!-- STOPKA -->
 <?php include(ROOT_PATH . 'app/includes/footer.php'); ?>

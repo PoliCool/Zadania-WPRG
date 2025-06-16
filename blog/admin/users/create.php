@@ -1,4 +1,5 @@
 <?php include("../../path.php") ?>
+<?php include(ROOT_PATH . '/app/controllers/users.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,28 +23,25 @@
     <div class="admin_content">
 
         <div class="button_group">
-            <a href="create.html" class="button_big">Add User</a>
-            <a href="index.html" class="button_big" >Manage Users</a>
+            <a href="create.php" class="button_big">Add User</a>
+            <a href="index.php" class="button_big" >Manage Users</a>
         </div>
         <div class="admin_post_content">
             <h2 class="page_title">Create User</h2>
-            <form action="create.html" method="post">
+            <form action="create.php" method="post">
 
                 <div>
                     <label>Username</label> <br>
-                    <input type="text" name="text" class="text_input title_input"><br>
+                    <input type="text" name="username" class="text_input title_input"><br>
                     <label>Email</label><br>
-                    <input type="text" name="title" class="text_input title_input"><br>
+                    <input type="text" name="email" class="text_input title_input"><br>
                     <label>Password</label><br>
-                    <input type="text" name="text" class="text_input title_input"><br>
+                    <input type="text" name="password" class="text_input title_input"><br>
                     <label>Password Confirmation</label><br>
-                    <input type="text" name="text" class="text_input title_input"><br>
-                    <label>Role</label><br>
-                    <select name="role" class="text_input">
-                        <option value="admin">Admin</option>
-                        <option value="user">Author</option>
-                    </select>
-                    <button type="submit" name="create_button" class="button button_big">Add User</button>
+                    <input type="text" name="password_confirmation" class="text_input title_input"><br>
+                    <label>Adamin</label><br>
+                    <input type="checkbox" name="admin" value="1" class="text_input title_input"><br>
+                    <button type="submit" name="create_admin"  class="button button_big">Add User</button>
                 </div>
             </form>
         </div>

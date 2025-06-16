@@ -1,5 +1,5 @@
 <?php include("../../path.php") ?>
-<?php include(ROOT_PATH . '/app/controllers/posts.php');?>
+<?php include(ROOT_PATH . '/app/controllers/users.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,21 +29,17 @@
         <div class="admin_post_content">
             <h2 class="page_title">Edit User</h2>
             <form action="edit.php" method="post" enctype="multipart/form-data">
-
-                <label>Image</label>
-                <input type="file" name="image" class="text_input" >
+                <input type="hidden" name="id" value="<?php echo $id;?>">
                 <div>
-                    <label>Title</label>
-                    <input type="text" name="title" value="<?php echo $title ?>" class="text_input title_input">
-                    <label>Text</label>
-                    <input type="text" name="body" value="<?php echo $body ?>" class="text_input title_input">
-                    <div>
-                        <label>
-                            <input type ="checkbox" name="published">
-                            Published
-                        </label>
-                    </select>
-                    <button type="submit" name="update_post" class="button button_big">Add User</button>
+                    <label>Usernamer</label>
+                    <input type="text" name="username"  class="text_input title_input">
+                    <label>Email</label>
+                    <input type="text" name="email"  class="text_input title_input">
+                    <label>Password</label>
+                    <input type="text" name="password"  class="text_input title_input">
+                    <label>Password Confirmation</label>
+                    <input type="text" name="passwordConfirmation"  class="text_input title_input">
+                    <button type="submit" name="update_user" class="button button_big">Update User</button>
                 </div>
             </form>
         </div>
