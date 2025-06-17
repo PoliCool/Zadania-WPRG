@@ -71,3 +71,8 @@ th,td{
 th{
     text-align: center;
 }
+.form_column {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}

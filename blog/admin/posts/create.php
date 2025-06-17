@@ -33,12 +33,13 @@ adminOnly();
 
             <?php include(ROOT_PATH . '/app/helpers/formErrors.php'); ?>
 
-            <form action="create.php" method="post" enctype="multipart/form-data">
+            <form action="create.php" method="post" enctype="multipart/form-data" class="form_column">
                 <label>Image</label>
                 <input type="file" name="image" class="text_input" >
                 <div>
                     <label>Title</label>
                     <input type="text" name="title" value="<?php echo $title ?>" class="text_input title_input">
+                    <br>
                     <label>Text</label>
                     <input type="text" name="body" value="<?php echo $body ?>" class="text_input title_input">
                     <div>
