@@ -4,10 +4,9 @@ header{
 }
 .content{
     display:flex;
-
+    background-color: white;
 }
 .left_panel{
-
     flex:2;
     background: blueviolet;
 }
