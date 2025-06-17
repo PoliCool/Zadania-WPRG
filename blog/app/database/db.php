@@ -141,3 +141,6 @@ function getNextPost($currentId) {
     $record = $stmt->get_result()->fetch_assoc();
     return $record;
 }
+function getMessages() {
+    return selectAll('messages');  // zakładam, że tabela to 'messages'
+}
