@@ -12,9 +12,9 @@
             </a>
         </div>
         <div class="footer_section contact_form">
-            <form action="index.html" method="post" class="contact_form_inner">
+            <form action="contact.php" method="post" class="contact_form_inner">
                 <label for="email">Odezwij się!</label>
-                <input type="email" name="email" id="email" class="text_input contact_input" placeholder="Email">
+                <input type="text" name="email" id="email" class="text_input contact_input" placeholder="Email">
 
                 <textarea name="message" class="text_input contact_input" placeholder="Twoja wiadomość"></textarea>
 
