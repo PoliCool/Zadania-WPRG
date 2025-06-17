@@ -2,6 +2,8 @@
 <?php include(ROOT_PATH . 'app/controllers/posts.php');
 if(isset($_GET['id'])) {
     $post = selectOne('posts', ['id' => $_GET['id']]);
+    $previousPost = getPreviousPost($_GET['id']);
+    $nextPost = getNextPost($_GET['id']);
 }
 ?>
 <!DOCTYPE html>
@@ -31,7 +33,20 @@ if(isset($_GET['id'])) {
         </div>
     </div>
 </div>
+
+<div class="post-navigation">
+    <?php if($previousPost): ?>
+        <a href="single.php?id=<?php echo $previousPost['id']; ?>" class="button_nav">← Previous Post</a>
+    <?php endif; ?>
+
+    <?php if($nextPost): ?>
+        <a href="single.php?id=<?php echo $nextPost['id']; ?>" class="button_nav">Next Post →</a>
+    <?php endif; ?>
+</div>
+
+
 <!-- STOPKA -->
 <?php include(ROOT_PATH . 'app/includes/footer.php'); ?>
+
 </body>
 </html>

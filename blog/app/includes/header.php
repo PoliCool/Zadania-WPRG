@@ -22,7 +22,7 @@
                 <ul class="dropdown">
 
                     <?php if($_SESSION['admin']): ?>
-                    <li><a href="<?php echo BASE_URL .'/admin/dashboard.php'?>">Dashboard</a></li>
+                    <li><a href="<?php echo BASE_URL .'/admin/posts/create.php'?>">Dashboard</a></li>
                     <?php endif; ?>
                     <li><a href="<?php echo BASE_URL . '/logout.php' ?>">Logout</a></li>
                 </ul>

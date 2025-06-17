@@ -126,3 +126,18 @@ function getPublicPosts(){
     $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     return $records;
 }
+function getPreviousPost($currentId) {
+    global $conn;
+    $sql = "SELECT * FROM posts WHERE id < ? ORDER BY id DESC LIMIT 1";
+    $stmt = executeQuery($sql, ['id' => $currentId]);
+    $record = $stmt->get_result()->fetch_assoc();
+    return $record;
+}
+
+function getNextPost($currentId) {
+    global $conn;
+    $sql = "SELECT * FROM posts WHERE id > ? ORDER BY id ASC LIMIT 1";
+    $stmt = executeQuery($sql, ['id' => $currentId]);
+    $record = $stmt->get_result()->fetch_assoc();
+    return $record;
+}
