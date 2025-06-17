@@ -1,14 +1,13 @@
 header{
-    border: 1px solid red;
+
 
 }
 .content{
     display:flex;
-    border: 1px solid red;
 
 }
 .left_panel{
-    border: 1px solid red;
+
     flex:2;
     background: blueviolet;
 }
@@ -28,7 +27,7 @@ header{
     background: black;
 }
 .admin_content{
-    border: 1px solid red;
+
     flex: 8;
     padding: 40px;
     overflow: scroll;
@@ -69,4 +68,7 @@ th,td{
 .admin_post_content{
     display: flex;
     flex-direction: column;
+}
+th{
+    text-align: center;
 }

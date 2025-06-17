@@ -4,6 +4,7 @@
         <h1 class="logo_name">
             <span class="part1">Rutkowski</span><span class="part2">Blog</span>
         </h1>
+    </a>
         <div class="nav_wrapper">
             <ul class="nav">
                 <?php if (isset($_SESSION['user_id'])): ?>
@@ -16,8 +17,9 @@
                     <ul class="dropdown">
 
                         <?php if($_SESSION['admin']): ?>
-                        <li><a href="<?php echo BASE_URL .'/admin/dashboard.php'?>"Dashboard</a></li>
-    <?php endif; ?>
+                            <li><a href="<?php echo BASE_URL .'/admin/dashboard.php' ?>">Dashboard</a></li>
+
+                        <?php endif; ?>
     <li><a href="<?php echo BASE_URL . '/logout.php' ?>">Logout</a></li>
     </ul>
     </li>
@@ -27,5 +29,5 @@
     <?php endif; ?>
     </ul>
     </div>
-    </a>
+
 </header>

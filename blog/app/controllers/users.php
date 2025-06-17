@@ -14,21 +14,21 @@ $passwordConfirmation="";
 
 $errors = [];
 function loginUser($user){
-    $_SESSION['user_id']=$user['id'];
-    $_SESSION['username']=$user['username'];
-    $_SESSION['admin']=$user['admin'];
-    $_SESSION['message']='You are now logged in';
-    $_SESSION['type']='success';
-    header('Location:'.BASE_URL.'/index.php');
+    $_SESSION['user_id'] = $user['id'];
+    $_SESSION['username'] = $user['username'];
+    $_SESSION['admin'] = $user['admin'];
+    $_SESSION['message'] = 'You are now logged in';
+    $_SESSION['type'] = 'success';
 
-    /*przekierowanie*/
-    if($_SESSION['admin']==1){
-        header('Location:'.BASE_URL.'/admin/users/create.php');
-    }else{
-        header('Location:'.BASE_URL.'/index.php');
+    // Przekierowanie zależnie od roli
+    if ($_SESSION['admin'] == 1) {
+        header('Location: ' . BASE_URL . '/admin/users/create.php');
+    } else {
+        header('Location: ' . BASE_URL . '/index.php');
     }
     exit();
 }
+
 
 /*rejestracja*/
 

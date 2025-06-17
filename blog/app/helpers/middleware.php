@@ -8,13 +8,14 @@ if(empty($_SESSION['id'])){
 }
 }
 function adminOnly($redirect = '/index.php'){
-    if(empty($_SESSION['id']) || empty($_SESSION['admin'])){
+    if(empty($_SESSION['user_id']) || empty($_SESSION['admin'])){
         $_SESSION['message'] = 'You are not authorized to view this page';
-        $_SESSION['type'] = 'erorr';
+        $_SESSION['type'] = 'error';
         header('Location:'.BASE_URL.$redirect);
         exit(0);
     }
 }
+
 function guestsOnly($redirect = '/index.php'){
     if(isset($_SESSION['id'])){
         header('Location:'.BASE_URL.$redirect);

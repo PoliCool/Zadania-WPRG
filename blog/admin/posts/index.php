@@ -1,6 +1,7 @@
-<?php include("../../path.php");?>
-<?php include(ROOT_PATH . '/app/controllers/posts.php');
+<?php include("../../path.php"); ?>
 
+<?php include(ROOT_PATH . '/app/controllers/posts.php');
+adminOnly();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +38,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
-                    <th>Author</th>
+
                     <th colspan="3">Action</th>
                 </tr>
                 </thead>
@@ -46,7 +47,7 @@
                     <tr>
                         <td><?php echo $key + 1; ?></td>
                         <td><?php echo $post['title']; ?></td>
-                        <td>AWA</td>
+                        <td></td>
                         <td><a href="edit.php?id=<?php echo $post['id'];?>" class="edit">edit</a></td>
                         <td><a href="edit.php?delete_id=<?php echo $post['id'];?>" class="delete">delete</a></td>
                         <td>

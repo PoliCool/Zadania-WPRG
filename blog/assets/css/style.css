@@ -386,3 +386,8 @@ header ul li ul li a:hover {
 .button_nav:hover {
     background-color: #555;
 }
+
+.post_image_bottom {
+    width: 200px;
+    height: 200px;
+}

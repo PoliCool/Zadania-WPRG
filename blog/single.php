@@ -30,6 +30,12 @@ if(isset($_GET['id'])) {
         <h1 class="post_title"><?php echo $post['title']?> </h1>
         <div class ="post_content">
           <?php echo html_entity_decode($post['body']);?>
+            <?php if (!empty($post['image'])): ?>
+                <div class="post_image_container">
+                    <img src="<?php echo BASE_URL . '/assets/images/' . $post['image']; ?>"  class="post_image_bottom" />
+                </div>
+            <?php endif; ?>
+        </div>
         </div>
     </div>
 </div>
