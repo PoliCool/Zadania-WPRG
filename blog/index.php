@@ -1,7 +1,7 @@
 <?php include('path.php');
 include(ROOT_PATH . 'app/database/db.php');
 
-$posts=selectAll('posts',['published'=>1]);
+$posts=getPublicPosts();
 
 ?>
 
@@ -28,19 +28,27 @@ $posts=selectAll('posts',['published'=>1]);
     <h1 class="new_posts">Najnowsze Posty</h1>
     <div class="main_content">
 
-        <div class="post">
-            <img src="https://picsum.photos/200/300" alt="" class="post_image">
-            <div class="post_preview">
-                <h2><a href="single.html">LOLOLOl sadkaosjdw dwolo</a></h2>
-                <span>Adam Rutkowski</span>
-                <span>15/06/2025</span>
-                <p class="preview_text">
-                    skibid sigma elo sigjidsa
-                </p>
-                <a href="single.html" class="button read_more">Read More</a>
+        <?php foreach ($posts as $post): ?>
+            <div class="post">
+                <img src="<?php echo BASE_URL.'/assets/images/' . $post['image'];?>" alt="" class="post_image">
+                <div class="post_preview">
+                    <h2><a href="single.php?id=<?php echo $post['id'];?>"><?php echo $post['title']; ?></a></h2>
+                    <span><?php echo $post['username']; ?></span>
+                    <span><?php echo date('F j, Y',strtotime($post['created_at'])); ?></span>
+                    <p class="preview_text">
+                        <?php echo html_entity_decode(substr($post['body'],0,150). '...'); ?>
+                    </p>
+                    <a href="single.php?id=<?php echo $post['id'];?>" class="button read_more">Read More</a>
+                </div>
             </div>
-        </div>
+        <?php endforeach; ?>
+
+        <!-- Sztuczny dystans pod postami (nowy element) -->
+        <div style="height: 50px;"></div>
+
+    </div>
 </div>
+
 <!-- STOPKA -->
 <?php include(ROOT_PATH . 'app/includes/footer.php'); ?>
 </body>

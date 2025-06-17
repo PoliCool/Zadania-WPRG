@@ -1,9 +1,15 @@
 <?php include("path.php") ?>
+<?php include(ROOT_PATH . 'app/controllers/posts.php');
+if(isset($_GET['id'])) {
+    $post = selectOne('posts', ['id' => $_GET['id']]);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Single </title>
+    <!--Ciekawostka z lepszym pozycjonowaniem w google -->
+    <title><?php echo $post['title']?> </title>
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Ikonki -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -19,13 +25,9 @@
 <div class="content">
 
     <div class="main_content single">
-        <h1 class="post_title">Tytuł posta</h1>
+        <h1 class="post_title"><?php echo $post['title']?> </h1>
         <div class ="post_content">
-            <p>ontrary to popular belief, Lorem Ipsum is not simply ran</p>
-            <p>ontrary to popular belief, Lorem Ipsum is not simply ran</p>
-            <p>ontrary to popular belief, Lorem Ipsum is not simply ran</p>
-            <p>ontrary to popular belief, Lorem Ipsum is not simply ran</p>
-            <p>ontrary to popular belief, Lorem Ipsum is not simply ran</p>
+          <?php echo html_entity_decode($post['body']);?>
         </div>
     </div>
 </div>

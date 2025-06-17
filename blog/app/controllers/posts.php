@@ -2,6 +2,7 @@
 
 include(ROOT_PATH.'app/database/db.php');
 include(ROOT_PATH.'app/helpers/validatePost.php');
+include(ROOT_PATH.'app/helpers/middleware.php');
 
 $table='posts';
 $posts=selectAll($table );

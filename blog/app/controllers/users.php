@@ -1,8 +1,7 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+
 include(ROOT_PATH.'app/database/db.php');
+include(ROOT_PATH.'app/helpers/middleware.php');
 $table='users';
 $admin_users = selectAll($table,['admin'=>1]);
 
@@ -42,6 +41,13 @@ if(isset($_POST['register_button']) || isset($_POST['create_admin'])){
     if(empty($_POST['email'])){
         array_push($errors,'Email is required');
     }
+
+    if(empty($_POST['email'])){
+        array_push($errors,'Email is required');
+    } else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+        array_push($errors, 'Email format is invalid');
+    }
+
     if(empty($_POST['password'])){
         array_push($errors,'Password is required');
     }

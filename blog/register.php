@@ -45,12 +45,12 @@
         <div>
             <label>Password</label>
             <br>
-            <input type="text" name="password" class="text_input">
+            <input type="password" name="password" class="text_input">
         </div>
         <div>
             <label>Password Confirmation</label>
             <br>
-            <input type="text" name="password_confirmation" class="text_input">
+            <input type="password" name="password_confirmation" class="text_input">
         </div>
         <div>
             <button type="submit" name="register_button" class="button button_big">Register</button>
